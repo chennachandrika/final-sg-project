@@ -3,14 +3,15 @@
     border-radius: 6px;
     border-width: 0px;
     box-shadow: 2px 5px #c4be97;
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 90%;
     font-family: 'roboto';
+    margin-right: 35px;
   }
   @media (min-width: 768px) {
     .home-demo-card-details-container {

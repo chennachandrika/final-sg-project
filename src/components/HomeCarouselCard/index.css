@@ -1,0 +1,36 @@
+.home-carousel-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 8px;
+  height: 200px;
+  width: 240px;
+  margin-bottom: 20px;
+}
+.avatar-image{
+    height: 40vh;
+    margin: 10px;
+    width: 50%;
+}
+.avatar-description{
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.dark-description-avatar{
+    color: #b8b4b4;
+}
+.light-description-avatar{
+    color: #3d3f75;
+}
+.avatar-name{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.dark-name-avatar{
+    color:#e6e1e1 ;
+}
+.light-name-avatar{
+    color:#030438 ;
+}

@@ -16,7 +16,10 @@ export const HeaderContainer = styled.nav`
   }
 `
 export const HeaderLogo = styled.img`
-  width: 40px;
+  width: 50px;
+  height:33px;
+  margin-top:25px;
+  margin-left:60px;
   @media (min-width: 768px) {
     width: 60px;
     margin-top:20px;
@@ -67,6 +70,7 @@ export const ProfileButton = styled(HeaderButton)`
 `
 export const ProfileImage = styled.img`
   width: 100%;
+  margin-top:1px;
 `
 export const LogoutButton = styled.button`
   background-color: blue;
@@ -87,6 +91,7 @@ export const LogoutButton = styled.button`
 export const LogoutMobileIcon = styled.button`
   background-color: transparent;
   border-width: 0px;
+  cursor:pointer;
   margin-left: 18px;
   @media (min-width: 768px) {
     display: none;

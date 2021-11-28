@@ -63,6 +63,12 @@ margin-bottom: 26px;
 .video-description{
     font-size: 16px;
     font-family: "roboto",sans-serif;
+    
+}
+@media (max-width:768px){
+    .video-description{
+        margin-top: 90px;
+    }
 }
 .dark-video-description{
     color: #c4cdf5;

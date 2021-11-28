@@ -48,7 +48,8 @@ const Header = props => {
                 alt="website logo"
               />
             </Link>
-            <Link to="/courses"> <h1 className={`course-heading ${courseHeadingThemeColor}`}>Courses</h1> </Link>
+            <Link to="/courses" className="link"> <h1 className={`course-heading ${courseHeadingThemeColor}`}>Courses</h1> </Link>
+            <Link to="/saved-videos" className="link"> <h1 className={`course-heading ${courseHeadingThemeColor}`}>Saved Videos</h1> </Link>
             </div>
             <HeaderButtonsContainer>
               <HeaderButton onClick={toggleTheme} data-testid="theme">

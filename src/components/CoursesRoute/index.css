@@ -45,9 +45,9 @@ color: #030438;
 @media (max-width:768px){
     .videos-list-container{
         flex-direction: column;
-        margin-left: -70px;
+        margin-left: -40px;
     }
 }
 .course{
-    margin-left: 50px;
+    margin-left: 0px;
 }

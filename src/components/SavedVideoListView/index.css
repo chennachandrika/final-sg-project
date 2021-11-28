@@ -1,0 +1,8 @@
+.saved-list-view-bg-container{
+    display: flex;
+    background-color: transparent;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    width: 80vw;
+    padding-inline-start: 0;
+}

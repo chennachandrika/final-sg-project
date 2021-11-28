@@ -1,9 +1,10 @@
 .home-section-heading {
     font-size: 30px;
     font-weight: 700;
-  
-    text-align: center;
+  text-align: center;
     max-width: 70%;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
   @media (min-width: 768px) {
     .home-section-heading {

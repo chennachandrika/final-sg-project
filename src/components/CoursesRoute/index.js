@@ -38,55 +38,19 @@ const classWiseCourseDetails = [
         imageUrl:"https://i.ytimg.com/vi/mFT1_aUwMvo/maxresdefault.jpg",
         name:"3rd class Lecture Videos",
         para:"NCERT Solutions for Class 3 English Book PDF Download · Unit 1 (Good Morning and The Magic Garden) · Unit 2 (Bird Talk and Nina and the Baby Sparrows) ",
-        otherDetails:[
-            {
-                id:10,
-                name:"okay 1",
-                paragrapgh:"margin-right: -26px; margin-right: -26px; margin-right: -26px;"
-            },
-            {
-                id:20,
-                name:"okay 2",
-                paragrapgh:"margin-right: -26px; margin-right: -26px; margin-right: -26px;"
-            },
-        ]
     },
     {
         id:"9th-class-videos",
         imageUrl:"https://i.ytimg.com/vi/S5He-BDVQHA/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBt2AwXEr94_cNrHS1sy3Sf9eBFLw",
         name:"9th class Lecture Videos",
         para:"The 9th Class English book moments has a total of 10 chapters with each of the story holding some valuable meaning along with making the language comprehension simpler for the students.        ",
-        otherDetails:[
-            {
-                id:30,
-                name:"okay 1",
-                paragrapgh:"margin-right: -26px; margin-right: -26px; margin-right: -26px;"
             },
-            {
-                id:40,
-                name:"okay 2",
-                paragrapgh:"margin-right: -26px; margin-right: -26px; margin-right: -26px;"
-            },
-        ]
-    },
     {
         id:"jee-videos",
         imageUrl:"https://i.ytimg.com/vi/4EhBvDhqZTo/maxresdefault.jpg",
         name:"JEE Lectures Videos",
         para:"JEE is for admission to the National Institutes of Technology (NITs), Indian Institutes of Information Technology (IIITs), and some other colleges designated as centrally funded technical institutes (CFTIs).",
-        otherDetails:[
-            {
-                id:50,
-                name:"okay 1",
-                paragrapgh:"margin-right: -26px; margin-right: -26px; margin-right: -26px;"
-            },
-            {
-                id:60,
-                name:"okay 2",
-                paragrapgh:"margin-right: -26px; margin-right: -26px; margin-right: -26px;"
-            },
-        ]    
-    }
+            }
 ]
 
 const CoursesRoute = () => (

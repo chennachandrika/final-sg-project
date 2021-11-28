@@ -67,3 +67,19 @@
        width: 90%;
    } 
 }
+.other-details-courses-container{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin-top: 20px;
+    margin-left: -80px;
+    margin-right: 20px;
+}
+@media(min-width:768px){
+    .other-details-courses-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 55px;
+        margin-left: -35px;
+    }
+}

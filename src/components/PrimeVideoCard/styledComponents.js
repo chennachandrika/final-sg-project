@@ -17,8 +17,10 @@ export const Thumbnail = styled.img`
   cursor: pointer;
   margin-left:0px;
   @media (max-width:768px){
-    height: 180px;
-  width: 300px;
+    height: 40vh;
+    min-width: 100%;
+    max-width:500px;
+    margin-bottom:20px;
   }
 `
 export const ModalContainer = styled.div`
