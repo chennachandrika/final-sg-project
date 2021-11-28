@@ -1,0 +1,28 @@
+.course-heading{
+    font-family:"roboto";
+font-size:22px;
+
+margin-top:18px;
+margin-left:35px;
+
+}
+.div-container{
+    display:flex;
+justify-content:space-evenly;
+}
+.darkCourneName{
+    color: #e6e1e1;
+}
+.lightCourneName{
+color: #030438;
+}
+.nav-link{
+    text-decoration:none;
+    list-style-type: none;
+    border-width: 0px;
+}
+.hr-line {
+    min-width: 100%;
+    border: 1px solid gray;
+    margin-top: 16px;
+  }

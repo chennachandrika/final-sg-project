@@ -1,0 +1,105 @@
+.list-item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 7px;
+    padding: 5px 10px 5px 20px;
+    margin: 4px 28px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 1px 3px gray;
+    
+}
+@media (max-width:768px){
+    .list-item-container{
+        margin: 4px 22px 24px 26px;
+        min-width: 70%;
+        
+    }
+}
+@media (max-width:992px){
+    .list-item-container{
+        width: 40%;
+        margin: 4px 6px 20px 4px;
+    }
+}
+@media (min-width:992px){
+    .list-item-container{
+        width: 26%;
+        margin-left: -10px;
+    }
+}
+.dark-theme-li-item{
+    border-color: #e6e1e1;
+}
+.light-theme-li-item{
+    border-color: #030438;
+}
+.popup-container {
+    background-color: white;
+    width: 750px;
+    height: 460px;
+    border-radius: 14px;
+}
+@media (max-width:768px){
+    .popup-container{
+        width: 300px;
+        height: 200px;
+    }
+}
+.prime-video-title{
+    font-size: 28px;
+    font-family: "roboto",sans-serif;
+    margin-top: 12px;
+margin-bottom: 26px;
+}
+.dark-video-title{
+    color:#8795d6 ;
+}
+.light-video-title{
+    color: #001570;
+}
+.video-description{
+    font-size: 16px;
+    font-family: "roboto",sans-serif;
+}
+.dark-video-description{
+    color: #c4cdf5;
+}
+.light-video-description{
+    color: #2f344d;
+}
+.price-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.price{
+    font-size: 22px;
+    font-family: "roboto",sans-serif;
+    margin-right: 160px;
+}
+.prices{
+    margin-right: 0px;
+}
+.dark-theme-price{
+    color:#8359ff ;
+}
+.light-theme-price{
+    color:#5031ad ;
+}
+.book-button-video-card{
+    padding: 12px;
+    width: 60%;
+    background-image: linear-gradient(to right,#e87b15,#e8c115);
+    border-radius: 8px;
+    border-width: 0px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-bottom: 7px;
+    cursor: pointer;
+    outline: none;
+}
