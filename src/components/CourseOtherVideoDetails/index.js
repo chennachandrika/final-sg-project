@@ -5,12 +5,13 @@ import './index.css'
 import Context from '../../context/Context'
 
 class CourseOtherVideoDetails extends Component  {
-    state = {likeActive:false,dislikeActive:false,savedActive:false}
+    state = {likeActive:false,dislikeActive:false,savedActive:false,updaetdLikesCount:this.likesCount}
 
     onClickLike = () => {
         this.setState(prevState => ({
             likeActive:!prevState.likeActive,
             dislikeActive:false,
+            updaetdLikesCount: prevState.likesCount + 1
         }))
     }
 
@@ -37,7 +38,7 @@ class CourseOtherVideoDetails extends Component  {
                     const onAddToSavedList = () => {
                         addVideoItem({...otherVideoDetails})
                     }
-                    const {likeActive,dislikeActive,savedActive}  = this.state
+                    const {likeActive,dislikeActive,savedActive,updaetdLikesCount}  = this.state
                     const {otherVideoDetails} = this.props
                     const {title,imgUrl,videoUrl,miniDescription,likesCount,dislikesCount,views} = otherVideoDetails
                     const titleTheme = isDarkTheme ? "dark-theme-title":"light-theme-title"
@@ -57,8 +58,6 @@ class CourseOtherVideoDetails extends Component  {
                             <div className="row-container-for-meta">
                                 <div className="date-and-views-container">
                                     <p className={`views-desciption ${viewsThemeColor}`}>{views} views <span className="span-element"></span></p>
-                                    <p className={`views-desciption ${viewsThemeColor}`}>{likesCount} Likes<span className="span-element"></span></p>
-                                    <p className={`views-desciption ${viewsThemeColor}`}>{dislikesCount} Dislikes</p>
                                 </div>
                                 <div className="likes-dislikes-container">
                                     <div className="like-button-container">

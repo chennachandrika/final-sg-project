@@ -9,7 +9,7 @@
     border-width: 1px;
     border-style: solid;
     box-shadow: 1px 3px gray;
-    
+    max-height: 80vh;
 }
 @media (max-width:768px){
     .list-item-container{
@@ -108,4 +108,40 @@ margin-bottom: 26px;
     margin-bottom: 7px;
     cursor: pointer;
     outline: none;
+    
+}
+.booking-container-popup{
+    background-image: linear-gradient(to left,#91c4c4,#258080);
+    border-radius: 7px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 370px;
+    height: 39vh;
+}
+.label-element{
+    font-size: 17px;
+    font-family: sans-serif;
+    color: #030438;
+    margin-bottom: 8px;
+}
+.input-element{
+    margin-bottom: -10px;
+    padding: 6px;
+    font-size: 15px;
+    border-radius: 7px;
+    margin-bottom: 12px;
+}
+.enroll-button{
+    width: 45%;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+.invalid-error{
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #e80c0c;
+    margin-bottom: 8px;
+    margin-top: -5px;
 }

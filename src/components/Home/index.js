@@ -6,7 +6,7 @@ import Header from '../Header'
 import Context from '../../context/Context'
 import HomeDemoCard from '../HomeDemoCard'
 import HomeAdvantages from '../HomeAdvantages'
-import HomeCarouselCard from '../HomeCarouselCard'
+//import HomeCarouselCard from '../HomeCarouselCard'
 import HomeFooter from '../HomeFooter'
 
 const carouselData = [
@@ -104,11 +104,11 @@ const Home = () => (
             </div>
             <HomeDemoCard />
             <HomeAdvantages />
-            <Slider {...settings}>
+            {/*<Slider {...settings}>
               {carouselData.map(each => (
                 <HomeCarouselCard key={each.id} carouselDetails={each} />
               ))}
-            </Slider> 
+              </Slider> */}
             <HomeFooter />
           </div>
         </>
