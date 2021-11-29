@@ -1,16 +1,6 @@
 import styled from 'styled-components'
 
-export const LoginPage = styled.div`
-  max-width: 100%;
-  margin: -10px;
-  margin-top:-70px;
-  min-height: 94vh;
-  padding: 20px;
-  background-color: ${props => (props.dark ? '#212121' : '#f9f9f9')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+
 export const LoginForm = styled.form`
   width: 100%;
   max-width: 400px;
@@ -24,6 +14,9 @@ export const LoginForm = styled.form`
   @media (min-width: 768px) {
     box-shadow: 0 0 0 16px rgba(200, 200, 200, 0.1);
     margin-top:40px;
+    
+    margin-bottom:40px;
+    min-width:30%;
   }
 `
 export const LogoContainer = styled.div`

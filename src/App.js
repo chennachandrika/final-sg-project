@@ -7,11 +7,12 @@ import Home from './components/Home'
 import CoursesRoute from './components/CoursesRoute'
 import CourseVideoDetails from './components/CourseVideoDetails'
 import SavedVideos from './components/SavedVideos'
+import RegisterForm from './components/RegisterForm'
 import './App.css'
 
 
 class App extends Component {
-  state = {isDarkTheme: false,savedVideoList:[]}
+  state = {isDarkTheme: true,savedVideoList:[]}
 
   toggleTheme = () => {
     this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme}))
@@ -53,6 +54,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={LoginRoute} />
+          <Route path="/register" component={RegisterForm} />
           <Route path="/courses" component={CoursesRoute} />
           <Route path="/saved-videos" component={SavedVideos} />
           <Route path="/course-details/:id" component={CourseVideoDetails} />

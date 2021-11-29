@@ -1,0 +1,20 @@
+.login-header{
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.login-route-login-button{
+    background-color: blue;
+  color: white;
+  border-radius: 4px;
+  height: 30px;
+  width: 90px;
+  border-width: 0;
+  margin-left: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  margin-right:30px;
+  margin-top: 20px;
+}

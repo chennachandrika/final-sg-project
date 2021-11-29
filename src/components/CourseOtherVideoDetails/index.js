@@ -57,7 +57,7 @@ class CourseOtherVideoDetails extends Component  {
     
                             <div className="row-container-for-meta">
                                 <div className="date-and-views-container">
-                                    <p className={`views-desciption ${viewsThemeColor}`}>{views} views <span className="span-element"></span></p>
+                                    <p className={`views-desciption ${viewsThemeColor}`}>{views} views </p>
                                 </div>
                                 <div className="likes-dislikes-container">
                                     <div className="like-button-container">

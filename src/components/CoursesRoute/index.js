@@ -1,3 +1,4 @@
+import { Component } from 'react'
 import Context from '../../context/Context'
 import Header from '../Header'
 import PrimeVideoCard from '../PrimeVideoCard'
@@ -53,37 +54,79 @@ const classWiseCourseDetails = [
             }
 ]
 
-const CoursesRoute = () => (
-    <Context.Consumer>
-        {value =>{
-            const {isDarkTheme} = value 
-            const CoursesThemeBg = isDarkTheme ? "dark-courses-bg":"light-courses-bg"
-            const primeCoursesHeadingTheme = isDarkTheme ? "dark-course-heading-prime":"light-course-heading-prime"
+class CoursesRoute extends Component {
+    state = {searchInput:''}
 
-            return(
-                <>
-                <Header />
-                
-                <div className = {`courses-route-container ${CoursesThemeBg}`}>
-                    <h1 className={`prime-courses-heading ${primeCoursesHeadingTheme}`}>Exclusive Prime Courses</h1>
-                    <ul className="videos-list-container">
-                        {primeCourses.map(eachVideo => (
-                            <PrimeVideoCard primeCoursesdata = {eachVideo} key={eachVideo.id} />
-                        ))}
-                    </ul>
+    onChangeSearchInput = event => {
+        this.setState({
+          searchInput: event.target.value,
+        })
+      }
+    
+      updateSearch = value => {
+        this.setState({
+          searchInput: value,
+        })
+      }
 
-                    <h1 className={`prime-courses-heading course ${primeCoursesHeadingTheme}`}>Courses</h1>
-                    <ul className="videos-list-container">
-                        {classWiseCourseDetails.map(eachVideo => (
-                                <CourseVideoCard Coursesdata = {eachVideo} key={eachVideo.id} />
+    render(){
+        const {searchInput} = this.state
+
+        const searchCourseResults = classWiseCourseDetails.filter(each =>
+            each.name.toLowerCase().includes(searchInput.toLowerCase()),
+        )
+
+        const searchPrimeResults = primeCourses.filter(each =>
+            each.title.toLowerCase().includes(searchInput.toLowerCase()),
+        )
+    
+        return(
+            <Context.Consumer>
+            {value =>{
+                const {isDarkTheme} = value 
+                const CoursesThemeBg = isDarkTheme ? "dark-courses-bg":"light-courses-bg"
+                const primeCoursesHeadingTheme = isDarkTheme ? "dark-course-heading-prime":"light-course-heading-prime"
+
+                return(
+                    <>
+                    <Header />
+                    <div className="input-container-search">
+                        <img
+                        src="https://assets.ccbp.in/frontend/react-js/search-img.png"
+                        alt="search"
+                        className="search-icon"
+                        />
+                        <input
+                        type="search"
+                        className="search-input"
+                        placeholder="Search Courses"
+                        onChange={this.onChangeSearchInput}
+                        value={searchInput}
+                        />
+                    </div>
+
+                    <div className = {`courses-route-container ${CoursesThemeBg}`}>
+                        <h1 className={`prime-courses-heading ${primeCoursesHeadingTheme}`}>Exclusive Prime Courses</h1>
+                        <ul className="videos-list-container">
+                            {searchPrimeResults.map(eachVideo => (
+                                <PrimeVideoCard primeCoursesdata = {eachVideo} key={eachVideo.id} updateSearch={this.updateSearch} />
                             ))}
-                    </ul>
-                </div>
+                        </ul>
 
-                
-                </>
-            )
-        }}
+                        <h1 className={`prime-courses-heading course ${primeCoursesHeadingTheme}`}>Courses</h1>
+                        <ul className="videos-list-container">
+                            {searchCourseResults.map(eachVideo => (
+                                    <CourseVideoCard Coursesdata = {eachVideo} key={eachVideo.id} updateSearch={this.updateSearch} />
+                                ))}
+                        </ul>
+                    </div>
+
+                    
+                    </>
+                )
+            }}
     </Context.Consumer>
-)
+        )
+    }
+}
 export default CoursesRoute

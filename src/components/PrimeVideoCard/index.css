@@ -118,7 +118,7 @@ margin-bottom: 26px;
     flex-direction: column;
     padding: 20px;
     min-width: 370px;
-    height: 39vh;
+    height: 42vh;
 }
 .label-element{
     font-size: 17px;
@@ -144,4 +144,10 @@ margin-bottom: 26px;
     color: #e80c0c;
     margin-bottom: 8px;
     margin-top: -5px;
+}
+.success-msg{
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #055410;
+    text-align: center;
 }

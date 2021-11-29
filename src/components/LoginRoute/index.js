@@ -1,10 +1,10 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-import {Redirect} from 'react-router-dom'
+import {Redirect,Link} from 'react-router-dom'
 
 // import Context
 import Context from '../../context/Context'
-
+import './index.css'
 // import styled components
 import {
   LoginPage,
@@ -72,60 +72,71 @@ class LoginRoute extends Component {
         {value => {
           const {isDarkTheme} = value
           return (
-            <LoginPage dark={isDarkTheme}>
-              <LoginForm dark={isDarkTheme} onSubmit={this.onSubmitForm}>
-                <LogoContainer>
-                  <Logo
-                    src={
-                      isDarkTheme
-                        ? 'https://i.ibb.co/gRZ1FmZ/letter-e-education-logo-design-element-logo-design-business-card-282939-257-copy.jpg'
-                        : 'https://i.ibb.co/QcTcvD5/letter-e-education-logo-design-element-logo-design-business-card-282939-257.jpg'
-                    }
-                    alt="website logo"
-                  />
-                </LogoContainer>
-                <InputFieldContainer>
-                  <InputFieldLabel dark={isDarkTheme} htmlFor="username">
-                    USERNAME
-                  </InputFieldLabel>
-                  <InputField
-                    id="username"
-                    type="text"
-                    value={username}
-                    onChange={this.onChangeUsername}
-                    placeholder="Username"
-                    color={isDarkTheme}
-                  />
-                </InputFieldContainer>
-                <InputFieldContainer>
-                  <InputFieldLabel dark={isDarkTheme} htmlFor="password">
-                    PASSWORD
-                  </InputFieldLabel>
-                  <InputField
-                    id="password"
-                    type={showPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={this.onChangePassword}
-                    placeholder="Password"
-                    color={isDarkTheme}
-                  />
-                </InputFieldContainer>
-                <CheckBoxContainer>
-                  <CheckBox
-                    id="showPassword"
-                    type="checkbox"
-                    onChange={this.onChangeShowPassword}
-                  />
-                  <CheckBoxLabel htmlFor="showPassword" dark={isDarkTheme}>
-                    Show Password
-                  </CheckBoxLabel>
-                </CheckBoxContainer>
-                <LoginButton type="submit">Login</LoginButton>
-                {errorMessage.length !== 0 && (
-                  <ErrorMessage>*{errorMessage}</ErrorMessage>
-                )}
-              </LoginForm>
-            </LoginPage>
+            <>
+                <div className="login-header">
+                  <Link to="/login">
+                    <button type="button" className="login-route-login-button">Login</button>
+                  </Link>
+                  <Link to="/register">
+                    <button type="button" className="login-route-login-button">Register</button>
+                  </Link>
+                </div>
+
+                <LoginPage dark={isDarkTheme}>
+                  <LoginForm dark={isDarkTheme} onSubmit={this.onSubmitForm}>
+                    <LogoContainer>
+                      <Logo
+                        src={
+                          isDarkTheme
+                            ? 'https://i.ibb.co/gRZ1FmZ/letter-e-education-logo-design-element-logo-design-business-card-282939-257-copy.jpg'
+                            : 'https://i.ibb.co/QcTcvD5/letter-e-education-logo-design-element-logo-design-business-card-282939-257.jpg'
+                        }
+                        alt="website logo"
+                      />
+                    </LogoContainer>
+                    <InputFieldContainer>
+                      <InputFieldLabel dark={isDarkTheme} htmlFor="username">
+                        USERNAME
+                      </InputFieldLabel>
+                      <InputField
+                        id="username"
+                        type="text"
+                        value={username}
+                        onChange={this.onChangeUsername}
+                        placeholder="Username"
+                        color={isDarkTheme}
+                      />
+                    </InputFieldContainer>
+                    <InputFieldContainer>
+                      <InputFieldLabel dark={isDarkTheme} htmlFor="password">
+                        PASSWORD
+                      </InputFieldLabel>
+                      <InputField
+                        id="password"
+                        type={showPassword ? 'text' : 'password'}
+                        value={password}
+                        onChange={this.onChangePassword}
+                        placeholder="Password"
+                        color={isDarkTheme}
+                      />
+                    </InputFieldContainer>
+                    <CheckBoxContainer>
+                      <CheckBox
+                        id="showPassword"
+                        type="checkbox"
+                        onChange={this.onChangeShowPassword}
+                      />
+                      <CheckBoxLabel htmlFor="showPassword" dark={isDarkTheme}>
+                        Show Password
+                      </CheckBoxLabel>
+                    </CheckBoxContainer>
+                    <LoginButton type="submit">Login</LoginButton>
+                    {errorMessage.length !== 0 && (
+                      <ErrorMessage>*{errorMessage}</ErrorMessage>
+                    )}
+                  </LoginForm>
+                </LoginPage>
+            </>
           )
         }}
       </Context.Consumer>

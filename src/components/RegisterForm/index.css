@@ -1,0 +1,42 @@
+.register-route-container-bg{
+    display: flex;
+    flex-direction: column;
+    margin: -10px;
+    min-height: 98vh;
+    padding-top: 10px;
+
+}
+.light-bg-register{
+    background-color: #fff;
+}
+.dark-bg-register{
+    background-color: #212121;
+}
+.messages{
+    display: flex;
+    justify-content: center;
+  }
+    
+  .error{
+    display: block;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+  }
+    
+  .success{
+    display: block;
+    background-color: lightblue;
+    color: black;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+  }
+  .form-container-css{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }

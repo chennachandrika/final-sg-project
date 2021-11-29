@@ -22,6 +22,7 @@
 .prime-courses-heading{
     font-size: 32px;
     font-family: "roboto" sans-serif;
+    margin-top: 0px;
 }
 @media (max-width:768px){
     .prime-courses-heading{
@@ -51,3 +52,29 @@ color: #030438;
 .course{
     margin-left: 0px;
 }
+
+.input-container-search {
+    display: flex;
+    background-color: #89abd6;
+    border: 2px solid #6697ff;
+    border-radius: 10px;
+    height: 45px;
+    width: 400px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-right: 200px;
+    margin-left: 60px;
+  }
+  .search-icon {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  .search-input {
+    color: #475569;
+    font-size: 20px;
+    background-color: white;
+    margin-left: 20px;
+    border-width: 0px;
+  }
