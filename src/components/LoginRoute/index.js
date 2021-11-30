@@ -36,23 +36,6 @@ class LoginRoute extends Component {
     this.setState((prevState) => ({ showPassword: !prevState.showPassword }));
   };
 
-  onSubmitForm = async (event) => {
-    event.preventDefault();
-    const { username, password } = this.state;
-    const apiUrl = "https://apis.ccbp.in/login";
-    const options = {
-      method: "POST",
-      body: JSON.stringify({ username, password })
-    };
-    const response = await fetch(apiUrl, options);
-    const data = await response.json();
-    if (response.ok) {
-      this.onSuccessfulLogin(data);
-    } else {
-      this.onInvalidLogin(data);
-    }
-  };
-
   onSuccessfulLogin = (data) => {
     const jwtToken = data.jwt_token;
     Cookies.set("jwt_token", jwtToken, { expires: 30 });
@@ -70,7 +53,34 @@ class LoginRoute extends Component {
     return (
       <Context.Consumer>
         {(value) => {
-          const { isDarkTheme } = value;
+          const { isDarkTheme, usersList } = value;
+          // console.log(usersList);
+          const onSubmitForm = async (event) => {
+            event.preventDefault();
+            const { username, password } = this.state;
+            // const apiUrl = "https://apis.ccbp.in/login";
+            // const options = {
+            //   method: "POST",
+            //   body: JSON.stringify({ username, password })
+            // };
+            // const response = await fetch(apiUrl, options);
+            // const data = await response.json();
+            const isValidUser = usersList.find(
+              (user) => user.username === username && user.pwd === password
+            );
+            if (isValidUser) {
+              const data = { jwt_token: "sample_token" };
+              this.onSuccessfulLogin(data);
+            } else {
+              const data = { error_msg: "invalid_user" };
+              this.onInvalidLogin(data);
+            }
+            // if (response.ok) {
+            //   this.onSuccessfulLogin(data);
+            // } else {
+            //   this.onInvalidLogin(data);
+            // }
+          };
           return (
             <>
               <div className="login-header">
@@ -85,7 +95,7 @@ class LoginRoute extends Component {
               </div>
 
               <LoginPage dark={isDarkTheme}>
-                <LoginForm dark={isDarkTheme} onSubmit={this.onSubmitForm}>
+                <LoginForm dark={isDarkTheme} onSubmit={onSubmitForm}>
                   <LogoContainer>
                     <Logo
                       src={

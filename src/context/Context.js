@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Context = React.createContext({
   isDarkTheme: false,
+  savedVideoList: [],
+  usersList: [],
+  addUserDetails: () => {},
   toggleTheme: () => {},
-  savedVideoList:[],
-  addVideoItem:() => {},
-  removeVideoItem:() => {},
-})
+  addVideoItem: () => {},
+  removeVideoItem: () => {}
+});
 
-export default Context
+export default Context;

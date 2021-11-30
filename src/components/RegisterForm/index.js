@@ -43,25 +43,6 @@ class RegisterForm extends Component {
     this.setState((prevState) => ({ showPassword: !prevState.showPassword }));
   };
 
-  onSubmitForm = (event) => {
-    event.preventDefault();
-    const { username, password, email } = this.state;
-    const updatedDetails = {
-      username: username,
-      email: email,
-      password: password
-    };
-    if (username === "" || password === "" || email === "") {
-      this.setState({ setError: false });
-    } else {
-      this.setState({
-        setSubmitted: true,
-        setError: false,
-        registerDetails: updatedDetails
-      });
-    }
-  };
-
   // Showing success message if user is true
 
   render() {
@@ -74,7 +55,6 @@ class RegisterForm extends Component {
       setError,
       setSubmitted
     } = this.state;
-    console.log(registerDetails);
     const successMessage = () => {
       return (
         <div
@@ -105,11 +85,29 @@ class RegisterForm extends Component {
     return (
       <Context.Consumer>
         {(value) => {
-          const { isDarkTheme } = value;
+          const { isDarkTheme, addUserDetails, usersList } = value;
           const registerBgTheme = isDarkTheme
             ? "dark-bg-register"
             : "light-bg-register";
-
+          const onSubmitForm = (event) => {
+            event.preventDefault();
+            const { username, password, email } = this.state;
+            const updatedDetails = {
+              username: username,
+              email: email,
+              password: password
+            };
+            if (username === "" || password === "" || email === "") {
+              this.setState({ setError: false });
+            } else {
+              this.setState({
+                setSubmitted: true,
+                setError: false,
+                registerDetails: updatedDetails
+              });
+              addUserDetails({ username, pwd: password });
+            }
+          };
           return (
             <div className={`register-route-container-bg ${registerBgTheme}`}>
               <div className="login-header">
@@ -129,7 +127,7 @@ class RegisterForm extends Component {
               </div>
 
               <div className="form-container-css">
-                <LoginForm dark={isDarkTheme} onSubmit={this.onSubmitForm}>
+                <LoginForm dark={isDarkTheme} onSubmit={onSubmitForm}>
                   <LogoContainer>
                     <Logo
                       src={
